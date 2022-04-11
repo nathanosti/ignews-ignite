@@ -31,16 +31,16 @@ export default function Home({ product }: HomeProps) {
           <p>
             Get acces to all publictations <br />
             <b>
-              for{' '}
+              for{" "}
               {product.amount.toLocaleString("en-US", {
                 style: "currency",
                 currency: "USD",
-              })}{' '}
+              })}{" "}
               month
             </b>
           </p>
 
-          <SubscribeButton />
+          <SubscribeButton priceId={product.priceId} />
         </section>
 
         <div className={Styles.imageWrapper}>
@@ -57,9 +57,7 @@ export default function Home({ product }: HomeProps) {
 }
 
 export async function getServerSideProps() {
-  const price = await stripe.prices.retrieve("price_1KnRjpL7w3tH3GgELii0LXZ6", {
-    expand: ["product"],
-  });
+  const price = await stripe.prices.retrieve("price_1KnRjpL7w3tH3GgELii0LXZ6");
 
   const product = {
     priceId: price.id,
