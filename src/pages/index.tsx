@@ -2,6 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import Styles from "../styles/home.module.scss";
 
+import { SubscribeButton } from "../components/SubscribeButton";
+
 export default function Home() {
   return (
     <>
@@ -21,7 +23,7 @@ export default function Home() {
             Get acces to all publictations <br /> <b>for $9,90 month</b>
           </p>
 
-          <button>Subscribe now</button>
+          <SubscribeButton />
         </section>
 
         <div className={Styles.imageWrapper}>
