@@ -10,7 +10,7 @@ export function SignInButton() {
       <button
         className={Styles.signButton}
         type="button"
-        onClick={!session && (() => signIn("github"))}
+        onClick={!session ? () => signIn("github") : undefined}
       >
         <FaGithub
           style={{ marginRight: "16px" }}

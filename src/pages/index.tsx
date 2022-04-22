@@ -49,6 +49,7 @@ export default function Home({ product }: HomeProps) {
             src="/assets/avatar.svg"
             alt="IG News Ilustration"
             objectFit="contain"
+            priority
           />
         </div>
       </main>
